@@ -12,11 +12,11 @@
 		"php.validate.executablePath": "/usr/local/bin/php"
 	},
 
-	"service": "app",
+	"service": "app_test",
 
 	"runServices": [
-		"app",
-		"db"
+		"app_test",
+		"db_test"
 	],
 
 	"runArgs": [

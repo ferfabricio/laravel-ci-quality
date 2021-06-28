@@ -1,23 +1,25 @@
 version: '3'
 
 services:
-    app:
+    app_test:
         image: ferfabricio/php-dev:1.0
-        container_name: app
+        container_name: app_test
         restart: unless-stopped
         tty: true
         environment:
-            SERVICE_NAME: app
+            SERVICE_NAME: app_test
         working_dir: /var/www
+        extra_hosts:
+          - "host.docker.internal:host-gateway"
         volumes:
             - ./:/var/www
         networks:
-            - app-network
+            - test-network
         depends_on:
-            - db
-    db:
+            - db_test
+    db_test:
         image: postgres:latest
-        container_name: db
+        container_name: db_test
         restart: unless-stopped
         tty: true
         ports:
@@ -30,9 +32,9 @@ services:
         volumes:
             - dbdata:/var/lib/postgresql/data/pgdata
         networks:
-            - app-network
+            - test-network
 networks:
-    app-network:
+    test-network:
 volumes:
     dbdata:
         driver: local
