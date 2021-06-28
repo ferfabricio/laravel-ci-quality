@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "ferfabricio/laravel-ci-quality",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "POC about CI / CD",
     "keywords": [
         "framework",
         "laravel"
