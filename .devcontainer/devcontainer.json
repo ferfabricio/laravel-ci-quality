@@ -15,9 +15,7 @@
 	"service": "app",
 
 	"runServices": [
-		"traefik",
 		"app",
-		"webserver",
 		"db"
 	],
 
