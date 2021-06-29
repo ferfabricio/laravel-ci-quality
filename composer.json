@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.2.5|^8.0",
         "fideloper/proxy": "^4.4",
+        "friendsofphp/php-cs-fixer": "^3.0",
         "laravel/framework": "^6.20.26",
         "laravel/tinker": "^2.5"
     },
@@ -56,6 +57,15 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "test": [
+            "phpunit"
+        ],
+        "php-cs:check": [
+            "php-cs-fixer fix --dry-run --diff ./app"
+        ],
+        "php-cs:fix": [
+            "php-cs-fixer fix ./app"
         ]
     }
 }
